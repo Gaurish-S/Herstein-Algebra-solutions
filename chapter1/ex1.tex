@@ -32,8 +32,6 @@ Prove the following laws that governs these operations:
 (The system described is an example of a boolean algebra.)
 
 \begin{solution}
-  We first show the following lemma,
-
   \begin{align*}
     \left(A + B  \right) + C &= \left( \left( A - B \right) \cup \left( B - A \right) \right) + C \\
     &= \left( \left( \left( A - B \right) \cup \left( B - A \right) \right) - C \right) \cup \left( C - \left( \left( A - B  \right) \cup \left( B- A \right) \right) \right)
@@ -42,11 +40,32 @@ Prove the following laws that governs these operations:
   Now we expand the RHS,
   \begin{align*}
     A + \left( B + C \right) &= A + \left( \left( B - C \right) \cup  \left( C - B \right) \right) \\
-    &= \left( A - \left( \left( B - C \right) \cup  \left( C - B \right) \right) \right) \cup \left( \left( \left( B - C \right) \cup  \left( C - B \right) \right) - A \right).
+    &= \left( A - \left( \left( B - C \right) \cup  \left( C - B \right) \right) \right) \cup \left( \left( \left( B - C \right) \cup  \left( C - B \right) \right) - A \right)
   .\end{align*}
-  Using lemma 1 we get,
 
-  now we using bi directional containment relation technique.
+  Now, let \( x \in \left( A + B \right) + C \), then there are two cases 
+
+  \begin{itemize}
+   \item \( x  \) is an element of \( \left( \left( A - B \right) \cup \left( B - A \right) \right) - C \) . If this is the case then
+     we know that \( x \in \left( A - B \right) \) or \( x \in  \left( B - A \right) \). However, in either case
+     \( x \notin C \). We examine both cases,
+     \begin{itemize}
+      \item \( x \in \left( A - B \right) \) and \( x \notin C \): In this case we know that
+        \( x \notin B \cup C \). So it is definitely not in a reduced version of this union which is
+        \( \left( B - C \right) \cup  \left( C - B \right) \) as this is just removing further elements from
+        \( B  \) and \( C \) before doing a union. Hence \( x \notin \left( B - C \right) \cup \left( C - B \right) \) but \( x \in A \). 
+        Therefore, \( x \in A - \left( \left( B - C \right) \cup \left( C - B \right) \right)\) and hence 
+        \( x \in  \left( A - \left( \left( B - C \right) \cup  \left( C - B \right) \right) \right) \cup \left( \left( \left( B - C \right) \cup  C - B \right) - A \right)\). Hence,
+        in this case the subset relation \( \left( A + B \right) + C \subset A +  \left(   B + C\right) \) holds.
+
+      \item Fix this \( x \in  \left( B - A \right) \) and \( x \notin C \). Hence, \( x \notin B \cap C \). So, it is in
+        \( \left( B - C \right) \cup  \left( C - B \right) \) as this is the same as \( \left( B \cup C \right) - \left( B \cap C \right) \) by definition of \( B + C \). However, \( x \notin A \).
+      Therefore, \( x \in  \left( \left( B - C \right) \cup \left( C - B \right)  \right)  - A \) and hence \( x \in \left( A - \left( \left( B - C \right) \cup \left( C - B \right) \right) \right) \cup \left( \left( \left( B - C \right) \cup \left( C - B \right) \right)  - A \right) \).
+      Hence, in this case the subset relation \( \left( A + B \right) + C \subset A + \left( B + C \right) \) holds.
+
+    \item a
+    \end{itemize}
+  \end{itemize}
 
 \end{solution}
 
