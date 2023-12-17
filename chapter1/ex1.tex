@@ -1,37 +1,63 @@
 \section{Set Theory}
 
-\subsection{Question 1}
-
-\begin{enumerate}
-  \item If \( A \) is a subset of \( B \) and \( B \) is a subset of \( C \), prove that \( A \) is a subset of \( C \).
-  \item If \( B \subset A\), prove that \( A \cup B = A \), and conversely.
-    \item If \( B \subset A \), prove that for any set \( C \) both \( B \cup C \subset A \cup C \) and \( B \cap C  \subset A \cap C\).
-\end{enumerate}
 
 %todo need to convert from handwriting to this
-
-\subsection{Question 9}
-
-Let \( S \) be a set and let \( S^{*} \) be the set whose elements are the various
-subsets of \( S \). In \( S^{*} \) we define an addition and multiplication as follows:
-If \( A, B \in S^{*} \) (remember, this means that they are substes of \( S \)):
-\begin{enumerate}
-  \item \( A + B = \left( A - B \right) \cup \left( B - A \right) \).
-  \item \( A \cdot B = A \cap B \).
-\end{enumerate}
-
-Prove the following laws that governs these operations:
+\subsection{Solution 1}
 
 \begin{enumerate}
-  \item \( \left( A + B \right) + C = A + \left( B + C \right) \).
-  \item \( A \cdot \left( B + C \right) = A \cdot B + A \cdot C \).
-  \item \( A \cdot A = A \).
-  \item \( A + A = \varnothing \).
-  \item If \( A + B = A + C  \) then \( B = C \).
-\end{enumerate}
-(The system described is an example of a boolean algebra.)
+  \item \( A  \subseteq B\) and \( B \subseteq C \). Then let \( x \in  A  \implies x \in B \implies x \in  C\).
+    Hence, for all \( x \in A, x \in C \). Therefore \( A \subseteq C. \)
 
-\begin{solution}
+    \item \( B \subseteq A \). This means \( x \in  B \implies x \in  A \).
+      So, all elements of \( B \) are in \( A. \)
+      Now, we show that \( A \cup B = A.\)
+      Let \( x \in  A \cup B  \) then \( x \in  A  \) or \( x \in  B \).
+
+      If \( x \in  A \) then we have nothing more to show. Otherwise if \( x \in  B \).
+      Since \(  B  \) is a subset of \( A \). This means that \( x \in  A \) as well.
+      Hence in either eventuality \( x \in  A \). So, for all \( x \in  A \cup  B \), \( x \in  A \).
+      Hence \( A \cup  B \subseteq A \).
+
+      It remains to show that \( A \subseteq A \cup  B \).
+      Let \( x \in  A  \). then by definition of union \( x \in  A \cup  B \).
+      
+      Hence, for all \( x \in  A \), \( x \in  A \cup  B \). Therefore, 
+      \( A \subseteq A \cup  B \).
+
+      Hence we haveshown that \( A \subseteq A\cup  B \) and \( A \cup  B \subseteq A \).
+      Therefore, \( A \cup  B = A \).
+
+      \item \( B \subseteq A \), so \( x \in  B  \implies x \in  A\). Now,
+        let \( x \in  B \cup  C \). then \( x \in  B \) or \( x \in  C \).
+
+      If \( x \in  B \) then \( x \in  A \), hence \( x \in  A \cup  C \).
+
+      Otherwise if \( x \in  C \). then \( x \in  A \cup  C \) by definition of union.
+
+      So, in either eventuality \( x \in  A \cup  C \). 
+      Now, we show that \( B \cap C \subseteq A \cap  C \).
+
+      If \( x \in  B \cap C \), \( x \in  B \) and \( x \in  C \). Since, \( x \in  B \), \( x \in  A \). So, \( x \in  A \). and \( x \in  C \).
+      Therefore, \( x \in A \) and \( x \in  C \). Therefore, \( x \in  A \cap C \).
+\end{enumerate}
+
+\subsection{Solution 2}
+
+\begin{enumerate}
+  \item Let \( x \in A \cap B \) then \( x \in  A \) and \( x \in  B \).
+    Hence, \( x \in  A \cap B \) by definition. Therefore, \( A \cap  B \subseteq B \cap  A \).
+
+    Let \( x \in  B \cap A \), then \( x \in  B \) and \( x \in  A \). Hence \( x \in  A \cap  B \).
+    Therefore, \( B \cap A \subseteq A \cap  B \).
+
+    Now we show that \( A \cup  B = B \cup  A \). Similar to above, trivial.
+
+  \item Let \( x \in  A \cap \left(B \cap  C  \right) \). Then \( x \in  A \) and \( x \in B \cap C \implies x \in B \) and \( x \in  C. \) Hence
+    \( x \in  A \) and \( x \in  \left( B \cap  C  \right) \). Therefore by definition \( x \in  A \cap \left( B \cap  C \right) \).
+\end{enumerate}
+
+\subsection{Solution 9}
+
   \begin{align*}
     \left(A + B  \right) + C &= \left( \left( A - B \right) \cup \left( B - A \right) \right) + C \\
     &= \left( \left( \left( A - B \right) \cup \left( B - A \right) \right) - C \right) \cup \left( C - \left( \left( A - B  \right) \cup \left( B- A \right) \right) \right)
@@ -58,17 +84,100 @@ Prove the following laws that governs these operations:
         \( x \in  \left( A - \left( \left( B - C \right) \cup  \left( C - B \right) \right) \right) \cup \left( \left( \left( B - C \right) \cup  C - B \right) - A \right)\). Hence,
         in this case the subset relation \( \left( A + B \right) + C \subset A +  \left(   B + C\right) \) holds.
 
-      \item Fix this \( x \in  \left( B - A \right) \) and \( x \notin C \). Hence, \( x \notin B \cap C \). So, it is in
+      \item \( x \in  \left( B - A \right) \) and \( x \notin C \). Hence, \( x \notin B \cap C \). So, it is in
         \( \left( B - C \right) \cup  \left( C - B \right) \) as this is the same as \( \left( B \cup C \right) - \left( B \cap C \right) \) by definition of \( B + C \). However, \( x \notin A \).
       Therefore, \( x \in  \left( \left( B - C \right) \cup \left( C - B \right)  \right)  - A \) and hence \( x \in \left( A - \left( \left( B - C \right) \cup \left( C - B \right) \right) \right) \cup \left( \left( \left( B - C \right) \cup \left( C - B \right) \right)  - A \right) \).
       Hence, in this case the subset relation \( \left( A + B \right) + C \subset A + \left( B + C \right) \) holds.
 
-    \item a
+      \item not bothered rn come back to this later too tedious
     \end{itemize}
   \end{itemize}
 
-\end{solution}
+\subsection{Solution 10}
+
+\begin{enumerate}
+ \item  Nope, transitivity is not guaranteed.
+
+    \item Nope, transitivity is not satisfied.
+
+\item     Yep, all three conditions satisfied, transitivity since uniqueness of father, the other two are trivial.
 
 
+\item    Yep, all three conditions satisfied.  
+ 
+\end{enumerate}
 
+ 
+
+ \subsection{Solution 11}
+
+ Not sure about this one.
+
+ \subsection{Solution 12}
+
+ The relation of concern is defined as follows. The set \( S \) of all integers
+ and let \(  n > 1\) be a fixed integer. Define for \( a, b \in S \), \( a \sim  b \) if \( a - b \) is a 
+ multiple of \( n \).
+
+ We first prove that this relation is an equivalence relation.
+
+ Let \( a \in  S \) then, \( a - a = 0\). Hence, \( a \sim a \). Therefore, this relation
+ is reflexive.
+
+ Let \( a, b \in S \) and \( a \sim  b \). Then \( a - b = k\) where \( k  \) is a multiple
+ of \( n \). Hence, \( b - a = - k\) and \( -k \) is also a multiple of \( n \).  
+ Therefore, \( b \sim a   \). Hence, this relation is symmetric. 
+
+ Let \( a,b and c \in  S\) and \( a \sim b \) and \( b \sim c \). Then we know that
+ \( a - b  \) and \( b - c \) are multiples of \( n \).
+ So,
+ \begin{align}
+   a - b &= pn \\
+   b - c &= qn
+ .\end{align}
+
+ For some \( p,q \in \mathbb{Z} \). Now we consider $(1) + (2)$, 
+
+ \begin{align*}
+   a - b + b - c &= pn - qn\\ 
+   a - c &= \left( p - q \right)n
+ .\end{align*}
+
+ Since, \( p - q \in \mathbb{Z} \) as \( p,q \in \mathbb{Z}  \). Therefore,
+ \( a - c \) is a multiple of \( n \). Hence, \( a - c \).
+ Therefore, this relation is transitive as well.
+
+ So, this relation is, reflexive, symmetric and transitive. Hence this 
+ is an equivalence relation.
+
+ Now we show that there are only \( n \), equivalence classes for this relation. Note that,
+
+ \begin{align*}
+   cl(0) &= \{ m \times n \mid m \in \mathbb{Z}\}   \\
+   cl(1) &= \{ m \times  n + 1 \mid m \in Z\}  \\
+   cl(2) &= \{ m \times  n + 2 \mid m \in Z\}  \\
+   \vdots \\
+   cl(n) &= \{ m \times n \mid m \in \mathbb{Z}\} = cl(0)
+ .\end{align*}
+
+ Hence, by inspection we notice that the equivalence classes 
+ start cycling every \( n \) terms \( n \). It is also clear that, \( \{cl(0), cl(1), \ldots, cl(n-1)\}\), are distinct equivalence classes. 
+ Now to show that only \( n \) equivalence classes exist we show that \( cl(k)  \in  \{cl(0), \ldots, cl(n-1)\}\) for
+ all \( k \in \mathbb{Z} \).
+
+ Now, let \( k \in \mathbb{Z} \), the we know that, \(  mod(k,n)  = a\) where \( m \in \{0, \ldots, n-1\}   \).
+
+ Therefore, \( cl(k) = \{ m \times n + a \mid m \in \mathbb{Z}\}  \in \{cl(0), cl(1), \ldots, cl(n-1)\} \).
+
+ Hence, there are \(n  \) equivalence classes for this equivalence relation which are \( \{cl(0), \ldots, cl(n-1)\}   \).
+
+ \subsection{Solution 13}
+
+ We state theorem 1.1.1 first below, 
+
+ \begin{theorem}
+ The distinct equivalence classes of an equivalence relation on \( A \), provide us with a decomposition of \( A \) as a union of mututally disjoint subsets
+ Conversely, given a decomposition of \( A \) as a union of mutually disjoint, non empty subsets, we can define an equivalence relation on \( A \) for which
+ these subsets are distinct equivalence classes.
+ \end{theorem}
 
