@@ -181,3 +181,31 @@
  these subsets are distinct equivalence classes.
  \end{theorem}
 
+ \begin{proof}
+ Let the equivalence relation on \( A  \) be denoted by \( \sim  \). We first notice that since for any \( a \in A  \), \( a \sim  a \), \( cl(a) \), whence the union of the \( cl(a)'s \) is all of \( A \).
+ We now assert that given two equivalence classes they are either equal or disjoint. For, suppose that \( cl(a) \) and \( cl(b)  \), are not disjoint; then there is an element \( x \in  cl(a) \cap cl(b)\). Since
+ \( x \in  cl(a) \), \( a \sim x  \); since \( x \in  cl(b) \), \( b \sim x \), whence by symmetry of the relation, \( x \sim  b \). However, \( a \sim  x \) and \( x \sim b \) by the transitivity of the relation forces \( a \sim b \). Suppose
+now that \( y \in  cl(b) \); thus \( b \sim y \). However, from \( a \sim  b \) and \( b \sim  y \), we deduce that \( a \sim  y \), that is \( y \in   cl(a) \). Therefore, every element in \( cl(b) \) is in \( cl(a) \)
+Which proves that \( cl(b) \subset cl(a) \). The converse of this argument implies \( cl(a) = cl(b) \)
+We have thus shown that distinct \( cl(a)'s \) are mutually disjoint and that
+their union is \( A \). This proves the first half of the theorem. Now for the other half.
+
+Suppose that \( A = \bigcup_{\alpha  \in  T} A_{\alpha}  \), where the \( A_{\alpha } \) are mutually disjoint, nonempty sets (\( \alpha  \) is in some index set \( T \)). How shall we use them to define an equivalence
+relation?. The way is clear; given an element \( a \in  A \) it is in exactly one \( A_{\alpha } \). We define for \( a,b \in A, a \sim b \)
+if \( a  \) and \( b \) are in the same \( A_{\alpha } \). 
+
+We now prove that this relation is a equivalence relation on \( A \). Let \( a \in  A \) then \( a  \) is in some \( A_{\alpha}\),  then it is clear that \( a \sim  a \).
+as \( a  \) and \( a \) are both in the same \( A_{\alpha} \). Therefore this relation is a reflexive relation.
+
+Now let \( a, b \in A \), such that, \( a \sim  b \). Then \( a,b  \) are in the same \( A_{\alpha } \). Therefore, \( b \sim  a \) as well since clearly \( b,a \) are also in the same \( A_{\alpha } \).
+Therefore this relation is a symmertric relation.
+
+Now let \( a, b, c \in A \) such that \( a \sim b   \), \( b \sim c \). Then \( a,b \in A_{p} \) for some \( p \in T \) and \( b,c \in A_{q} \) for some \( q \in T \).
+However, since \( b  \) can only be in exactly one \( A_{\alpha } \). \( p \) must be equal to \( q \). Hence \( A_{p}  = A_{q} \). Therefore, \( a \in A_{q} \). Therefore \( a \sim c  \) as \( a,c \in  A_{q} \).
+Therefore, \( \sim  \) is a transitive relation as well.
+
+Hence \( \sim  \) is reflexive, symmetric and transitive. Therefore it is an equivalence relation.
+
+Now it remains to prove that thee distinct equivalence classes are the \( A_{\alpha} \)'s to be continued.
+\end{proof}
+
